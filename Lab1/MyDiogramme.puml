@@ -1,0 +1,39 @@
+@startuml
+
+abstract class Bun {
+  - cost: double
+  - ingredients: List<String>
+  - dateTimeCreated: Date
+
+  + Bun(cost: double, ingredients: List<String>, preparationTime: int)
+  + getCost(): double
+  + setCost(cost: double): void
+  + getIngredients(): List<String>
+  + setIngredients(ingredients: List<String>): void
+  + getDateTimeCreated(): Date
+  + setDateTimeCreated(dateTimeCreated: Date): void
+  + abstract displayInfo(): void
+  + howLongAgo(): int
+  + addIngredients(newIngredients: List<String>): void
+}
+
+class Baguette {
+  + Baguette(cost: double, ingredients: List<String>, preparationTime: int)
+  + displayInfo(): void
+}
+
+class Baton {
+  + Baton(cost: double, ingredients: List<String>, preparationTime: int)
+  + displayInfo(): void
+}
+
+class Croissant {
+  + Croissant(cost: double, ingredients: List<String>, preparationTime: int)
+  + displayInfo(): void
+}
+
+Bun <|-- Baguette
+Bun <|-- Baton
+Bun <|-- Croissant
+
+@enduml
